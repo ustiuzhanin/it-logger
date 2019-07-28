@@ -9,7 +9,6 @@ import {
   CLEAR_CURRENT,
   SEARCH_LOGS
 } from './types';
-import { async } from 'q';
 
 // export const getLogs = () => {
 //   return async dispatch => {
@@ -40,7 +39,7 @@ export const getLogs = () => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -66,7 +65,7 @@ export const addLog = log => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -92,7 +91,7 @@ export const updateLog = log => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -113,7 +112,7 @@ export const deleteLog = id => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -133,7 +132,7 @@ export const searchLogs = text => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
